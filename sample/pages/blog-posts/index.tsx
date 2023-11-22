@@ -8,7 +8,7 @@ import {
     MarkdownField,
     DateField,
 } from "@refinedev/mui";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
 import { IResourceComponentsProps, useMany } from "@refinedev/core";
 
 const BlogPostList: React.FC<IResourceComponentsProps> = () => {
@@ -106,7 +106,12 @@ const BlogPostList: React.FC<IResourceComponentsProps> = () => {
 
     return (
         <List>
-            <DataGrid {...dataGridProps} columns={columns} autoHeight />
+            <DataGrid
+                {...dataGridProps}
+                slots={{toolbar: GridToolbar}}
+                columns={columns}
+                autoHeight
+            />
         </List>
     );
 };
